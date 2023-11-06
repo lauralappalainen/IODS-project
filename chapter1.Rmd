@@ -3,11 +3,74 @@
 
 *Write a short description about the course and add a link to your GitHub repository here. This is an R Markdown (.Rmd) file so you should use R Markdown syntax.*
 
+# Introduction
+
+*The installation process of all needed soft wares was a bit complicate, due to my working place has very strict "admin control". But now I have all needed tools so I can roll up my sleeves and start to study the topics of this course. I'm looking forward to get new tools for doing research. I found this course by accidentally when I scrolled the phD courses of UEF. I'm very interested about biostatistics and I really want to get more tools to analyze data.
+
+Please, find here my GitHub diary: https://github.com/lauralappalainen/IODS-project
+
+As a reflection of reading the course book, I felt __relieved__. Previously I have tried to study and learn R by myself and enrolling some _basics of R_ -course, but I didn't get the idea. I feel that the beginner like me, the textbook is excellent: clear and wrote so simple that I think I could understand something. I really need the skills of R so this is very beneficial for me. One thing there was challenging in these "introduction" chapters of the book: for example the pipe %>% was used in examples (in the chapter 2.2.2) before it was even explained (in the chapter 2.4).*
+
+## Installing some packages and testing syntaxes
 ```{r}
 # This is a so-called "R chunk" where you can write R code.
 
-date()
+install.packages("tidyverse")
+library(tidyverse) # install.packages("tidyverse")
+example_data <- read_csv("https://raw.githubusercontent.com/KimmoVehkalahti/RHDS/master/example_data.csv")
+View(example_data) # look at the data
+
+library(tidyverse)
+gbd_short <- read_csv("https://raw.githubusercontent.com/KimmoVehkalahti/RHDS/master/data/global_burden_disease_cause-year.csv")
+View(gbd_short)
 
 ```
-The text continues here.
 
+``` {r}
+
+install.packages("lubridate")
+library(lubridate) # install.packages("lubridate")
+
+current_datetime <- Sys.time()
+current_datetime
+
+parse_date_time("21:56 04/Nov'23", "%H:%M %d/%b'%Y")
+
+```
+*I tried to use (lubridate) package to parse the date as following but didn't succeed. Interestinly, I copied the R chunk from the "pluginfile" found from MOodle and just modify the current date and time.. If some of referees know that I did wrong, please help me :)
+
+```{r}
+a <- 103
+
+a
+
+seq(15, 30)
+
+example_sequence <- seq(15, 30)
+
+example_sequence <- example_sequence/2
+
+example_sequence
+```
+*This was copied from the puginfile, so let's try this same by me..
+```{r}
+a <- 120
+
+a
+
+seq(50, 75)
+
+example_sequence <- seq(50,75)
+
+example_sequence <- example_sequence/5
+
+example_sequence
+
+```
+*Hoorray, I create something correctly by myself!!
+
+### Summary of week 1 assignment
+*This was pretty good way to get in the tools and softwares we will use during this course. Even first steps were uncertain and I felt a bit horrified, now I feel more comfortable, even I'm very beginner with R. Hopefully, this spirit continues :)
+
+Best,
+Laura
